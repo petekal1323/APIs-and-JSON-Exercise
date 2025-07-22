@@ -17,8 +17,10 @@ public class QuoteGenerator
             
         var kanyeQuote = JObject.Parse(kanyeResponse).GetValue("quote").ToString();
             
-        Console.WriteLine($"{kanyeQuote}");
-        Console.WriteLine($"Kanye: '{kanyeQuote}'");
+        
+        Console.WriteLine($"--------------");
+        Console.WriteLine($"Kanye: '{kanyeQuote}");
+        Console.WriteLine($"--------------");
     }
 
     public static void RonQuote()
@@ -30,5 +32,9 @@ public class QuoteGenerator
         var RonResponse = client.GetStringAsync(RonURL).Result;
             
         var ronQuote = JArray.Parse(RonResponse).ToString().Replace('[', ' ').Replace(']', ' ').Trim();
+        
+        Console.WriteLine($"--------------");
+        Console.WriteLine($"Ron: '{ronQuote}");
+        Console.WriteLine($"--------------");
     }
 }
